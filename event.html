@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>emit연습</title>
+  </head>
+  <body>
+    <div id='app'>
+      <child-component v-on:show-log="printText"></child-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      Vue.component('child-component',{
+        template:'<button v-on:click="showLog">show</button>',
+        methods:{
+          showLog: function(){
+            this.$emit('show-log');
+          }
+        }
+      });
+
+      var app = new Vue({
+        el: '#app',
+        data:{
+          message: 'Hello VueJS!'
+        },
+        methods: {
+          printText: function(){
+            console.log("received an event");
+          }
+        }
+      });
+
+    </script>
+  </body>
+</html>
