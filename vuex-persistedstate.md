@@ -22,8 +22,8 @@ vuex-persistedstate의 옵션으로 state 중 저장이 필요한 변수만 선�
 ```javascript
 import createPersistedState from "vuex-persistedstate";
 const store = new Vuex.Store({
-// ...
-plugins: [createPersistedState()],
+  // ...
+  plugins: [createPersistedState()],
 });
 ```
 
